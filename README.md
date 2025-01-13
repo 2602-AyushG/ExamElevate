@@ -1,0 +1,1 @@
+ A comprehensive website offering curated resources for various competitive exams in India. Find detailed notes, recommended books, and inspiring testimonials to help you excel. Perfect for students preparing for exams like UPSC, SSC, JEE, NEET, and more.
