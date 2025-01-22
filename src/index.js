@@ -2,6 +2,7 @@ import express from 'express';
 import dbConnect from './lib/dbConnect.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import userRouter from './routes/user.routes.js';
 dotenv.config();
 const app = express();
 
@@ -11,11 +12,11 @@ app.use(cors(
         optionsSuccessStatus: 200
     }
 ));
-app.get('/', (req, res) => {
-    res.status(200).json({
-        message:'Hello world'
-    })
-});
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+app.use('/user',userRouter);
 
 dbConnect({app})
 .catch((err) => console.error(err));

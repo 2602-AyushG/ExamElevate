@@ -8,3 +8,5 @@ class ErrorHandler extends Error {
     this.success=false;
   }
 }
+
+export default ErrorHandler;

@@ -10,5 +10,5 @@ const examSchema = new mongoose.Schema({
     }],
 });
 
-const Exam = mongoose.model('Exam', examSchema);
-export default Exam;
+const ExamModel = mongoose.model('Exam', examSchema);
+export default ExamModel;
