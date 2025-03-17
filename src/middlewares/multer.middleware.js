@@ -8,5 +8,5 @@ const storage = multer.diskStorage({
       cb(null, file.originalname)
     }
   })
-  
+// upload is now a middleware that can be used in Express routes.
 export const upload = multer({storage})
