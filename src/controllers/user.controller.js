@@ -49,11 +49,29 @@ const postSignUp=ErrorWrapper(async(req,res,next)=>{
 })
 
 const postLogIn=ErrorWrapper(async(req,res,next)=>{
-
+    
 })
 
 const postLogOut=ErrorWrapper(async(req,res,next)=>{
+    const {id}=req.body;
+    if(!id){
+        throw new ErrorHandler(400,"Missing Id")
+    }
 
+    const user=await UserModel.findById(id);
+    if(!user){
+        throw new ErrorHandler(404,"User not found")
+    }
+    user.refreshToken=null;
+    await user.save();
+    res
+    .status(200)
+    .cookie("refreshToken","",{httpOnly:true})
+    .cookie("accessToken","",{httpOnly:true})
+    .json({
+        success:true,
+        message:"User logged out successfully"
+    })
 })
 
 export {postSignUp,postLogIn,postLogOut};
