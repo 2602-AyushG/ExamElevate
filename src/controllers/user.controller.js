@@ -49,29 +49,34 @@ const postSignUp=ErrorWrapper(async(req,res,next)=>{
 })
 
 const postLogIn=ErrorWrapper(async(req,res,next)=>{
-    
+    const {email, password}= req.body;
+    if(!email || !password){
+        throw new ErrorHandler(400,"Missing input fields")
+    }
+    const userExists=await UserModel.findOne({email});
+    if(!userExists){
+        throw new ErrorHandler(400,"User don't exists")
+    }
+    const isPasswordValid = await bcrypt.compare(password, userExists.password);
+    if(!isPasswordValid){
+        throw new ErrorHandler(400,"Password is incorrect")
+    }
+    //generate jwt token if password matches
+    const token = jwt.sign({id:userExists._id},process.env.JWT_SECRET,{expiresIn:process.env.JWT_EXPIRES});
+    res.status(200).json({
+        success:true,
+        data:{
+            token,
+            user:userExists
+        }
+    })
 })
 
 const postLogOut=ErrorWrapper(async(req,res,next)=>{
-    const {id}=req.body;
-    if(!id){
-        throw new ErrorHandler(400,"Missing Id")
-    }
-
-    const user=await UserModel.findById(id);
-    if(!user){
-        throw new ErrorHandler(404,"User not found")
-    }
-    user.refreshToken=null;
-    await user.save();
-    res
-    .status(200)
-    .cookie("refreshToken","",{httpOnly:true})
-    .cookie("accessToken","",{httpOnly:true})
-    .json({
-        success:true,
-        message:"User logged out successfully"
-    })
+    res.setCookie("token","");
+    res.json({
+        message:"Log out successful"
+    });
 })
 
 export {postSignUp,postLogIn,postLogOut};
