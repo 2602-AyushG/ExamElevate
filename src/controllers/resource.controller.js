@@ -53,7 +53,6 @@ export const updateResource = ErrorWrapper(async (req, res, next) => {
         //extract data from request
         const {id} = req.params;
         const {name,exam,subject,type,userId}=req.body;
-        const {path}=req.file;
 
         const resources = await ResourceModel.findById(id);
 
@@ -63,9 +62,15 @@ export const updateResource = ErrorWrapper(async (req, res, next) => {
                 message:"Resource not found"
             })
         }
-        
+        if(resources.uploader.toString()!=userId){
+            return res.status(400).json({
+                success:false,
+                message:"You are not authorized to update this resource"
+            })
+        }
         //for new file upload
         if(req.file){
+            const {path}=req.file;
             //upload file to cloudinary
             const cloudinaryResult=await uploadOnCloudinary(path);
             if(!cloudinaryResult){
@@ -78,7 +83,7 @@ export const updateResource = ErrorWrapper(async (req, res, next) => {
         resources.exam = exam;
         resources.subject = subject;
         resources.type = type;
-        resources.uploader = userId;
+        // resources.uploader = userId;
 
         await resources.save();
 
@@ -98,6 +103,7 @@ export const updateResource = ErrorWrapper(async (req, res, next) => {
 export const deleteResource = ErrorWrapper( async (req, res, next) => {
     try{
         const {id} = req.params;
+        const {userId}=req.body;
         const resources = await ResourceModel.findById(id);
         if(!resources){
             res.status(400).json({
@@ -105,7 +111,13 @@ export const deleteResource = ErrorWrapper( async (req, res, next) => {
                 message:"Resource not found"
             })
         }
-        await resources.remove();
+        if(resources.uploader.toString()!=userId){
+            return res.status(400).json({
+                success:false,
+                message:"You are not authorized to delete this resource"
+            })
+        }
+        await resources.deleteOne({_id:id});
         res.status(200).json({
             success:true,
             message:"Resource deleted successfully"
@@ -118,5 +130,3 @@ export const deleteResource = ErrorWrapper( async (req, res, next) => {
         })
     }
 });
-
-export{postUploadResource,getAllResources,updateResource,deleteResource};

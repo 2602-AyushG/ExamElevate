@@ -14,7 +14,7 @@ cloudinary.config({
           if (!localFilePath) return null
           console.log("file path is ", localFilePath);
           //upload the file on cloudinary
-          const response = await cloudinary.uploader.upload(localFilePath,{resource_type:'raw'});
+          const response = await cloudinary.uploader.upload(localFilePath);
           // file has been uploaded successfull
         //   console.log("file is uploaded on cloudinary ", response.url);
           fs.unlinkSync(localFilePath)
