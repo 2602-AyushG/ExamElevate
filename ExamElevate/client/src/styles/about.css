@@ -1,5 +1,5 @@
 .about-background {
-    background-image: url('../../public/images/about.jpeg');
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
     background-repeat: no-repeat;
     background-size: cover;
 }

@@ -19,5 +19,5 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/auth'));
 
 app.listen(port, () => {
-  console.log(`Courseation Server is listening on port ${port}`)
+  console.log(`ExamElevate Server is listening on port ${port}`)
 })

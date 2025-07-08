@@ -1,0 +1,84 @@
+.navbar {
+    background: #1e3a8a !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(233, 238, 242, 0.3) !important;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    color: #ffffff !important;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brain-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.brain-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    object-position: center;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)) brightness(1.2) contrast(1.2) saturate(1.1);
+    /* Crop to show only the brain part by clipping the circular edges */
+    clip-path: circle(45% at center);
+    background: transparent;
+}
+
+.brand-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #F4B942 !important;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.navbar-brand img {
+    filter: brightness(1.2);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+
+.btn-outline-success {
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
+    background: transparent !important;
+    border-radius: 25px !important;
+    padding: 8px 20px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-outline-success:hover {
+    background: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+} 

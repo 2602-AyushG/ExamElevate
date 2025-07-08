@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const JWT_Secret = "CourseationIsTheKey";
+const JWT_Secret = "ExamElevateIsTheKey";
 
 fetch_user = (req, res, next) => {
     const token = req.header('auth-token');

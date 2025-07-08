@@ -7,11 +7,11 @@ export default function About() {
         className="container-fluid about-background mt-5"
         style={{ height: "200px" }}
       ></div>
-      {/* Courseation Description */}
-      <div className="container courseation-content d-flex flex-column text-muted my-5">
-        <h1 className="text-center mb-5">Courseation</h1>
+      {/* ExamElevate Description */}
+      <div className="container courseation-content d-flex flex-column text-dark my-5">
+        <h1 className="text-center mb-5 text-dark">ExamElevate</h1>
         <p className="text-center">
-          Courseation - An interactive online course website that allows remote
+          ExamElevate - An interactive online course website that allows remote
           access to educational content and coursework.
         </p>
         <p>
@@ -112,19 +112,19 @@ export default function About() {
         </p>
         <p className="text-center">
           Whether you want to upskill for your career, learn a new hobby, or
-          broaden your knowledge, Courseation has a course for you. Join our
+          broaden your knowledge, ExamElevate has a course for you. Join our
           community of learners today and start your learning journey towards
           your goals!
         </p>
       </div>
       {/* Team Details */}
-      <div className="courseation-team container d-flex flex-column justify-content-around align-items-center flex-wrap text-muted my-5">
+              <div className="examElevate-team container d-flex flex-column justify-content-around align-items-center flex-wrap text-dark my-5">
         <br />
         <div className="container my-3">
-          <h1 className="text-center text-decoration-underline">Our Team</h1>
+          <h1 className="text-center text-decoration-underline text-dark">Our Team</h1>
         </div>
         <div className="container mt-5">
-          <h3 className="text-center size1">Development Team</h3>
+          <h3 className="text-center size1 text-dark">Development Team</h3>
         </div>
         <div className="d-flex justify-content-center flex-wrap">
           <div className="cards">
@@ -135,8 +135,8 @@ export default function About() {
                 alt="error"
               />
             </div>
-            <div className="text-center fw-bold">Aman Gupta</div>
-            <div className="text-center">
+            <div className="text-center fw-bold text-dark">Aman Gupta</div>
+            <div className="text-center text-dark">
               Software Engineering Branch, 3rd Year
             </div>{" "}
           </div>
@@ -148,26 +148,26 @@ export default function About() {
                 alt="error"
               />
             </div>
-            <div className="text-center fw-bold">Abhishek Goyal</div>
-            <div className="text-center">
+            <div className="text-center fw-bold text-dark">Abhishek Goyal</div>
+            <div className="text-center text-dark">
               Software Engineering Branch, 3rd Year
             </div>{" "}
           </div>
         </div>
       </div>
       {/* Feedback Section */}
-      <div className="courseation-feedback d-flex flex-row align-items-center justify-content-center my-5">
+              <div className="examElevate-feedback d-flex flex-row align-items-center justify-content-center my-5">
         <div className="card mx-2 shadow-effect" style={{ width: "35rem" }}>
           <img src="/images/public-relations.png" className="card-img-top" alt="..." />
           <div class="card-body">
-            <p class="card-text">For media enquiry email us at <span style={{ color: "#67CEA2" }}>press@courseation.com</span></p>
+                            <p class="card-text">For media enquiry email us at <span style={{ color: "#67CEA2" }}>press@examElevate.com</span></p>
             <br />
           </div>
         </div>
         <div className="card mx-2 shadow-effect" style={{ width: "35rem" }}>
           <img src="/images/contact-us.png" className="card-img-top" alt="..." />
           <div class="card-body">
-            <p class="card-text">Shoot your questions to us at <span style={{ color: "#67CEA2" }}>help@courseation.com</span></p>
+                            <p class="card-text">Shoot your questions to us at <span style={{ color: "#67CEA2" }}>help@examElevate.com</span></p>
             <br />
           </div>
         </div>

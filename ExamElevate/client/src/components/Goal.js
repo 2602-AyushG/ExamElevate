@@ -21,18 +21,18 @@ export default function Goal() {
     return (
         <>
             <div className="container my-5">
-                <div className="study-with-courseation d-flex flex-column">
-                    <div className="heading-study-with-courseation ms-4" style={{ width: "30%" }}>
-                        <h1>Study {id} with Courseation</h1>
+                <div className="study-with-examElevate d-flex flex-column">
+                    <div className="heading-study-with-examElevate ms-4" style={{ width: "30%" }}>
+                        <h1 className="text-dark">Study {id} with ExamElevate</h1>
                     </div>
-                    <div className="subheading-study-with-courseation ms-4">
-                        <p>Over 8,00,000 learners trust us for online and offline coaching</p>
+                    <div className="subheading-study-with-examElevate ms-4">
+                        <p className="text-dark">Over 8,00,000 learners trust us for online and offline coaching</p>
                     </div>
                 </div>
                 <div className="classes-of-the-goal container my-5">
                     {/* Classes by topics */}
                     <div className="my-5">
-                        <h4 className='ms-4 mb-3'><strong>Classes by {id} topics</strong></h4>
+                        <h4 className='ms-4 mb-3 text-dark'><strong>Classes by {id} topics</strong></h4>
                         <div className="d-flex justify-content-start flex-wrap">
                             {topicsData.map((item, index) => {
                                 return (
@@ -51,7 +51,7 @@ export default function Goal() {
                     </div>
                     {/* Classes by educators */}
                     <div className="my-5">
-                        <h4 className='ms-4 mb-3'><strong>Classes by {id} educators</strong></h4>
+                        <h4 className='ms-4 mb-3 text-dark'><strong>Classes by {id} educators</strong></h4>
                         <div className="d-flex justify-content-start flex-wrap">
                             {educatorsData.map((item, index) => {
                                 return (

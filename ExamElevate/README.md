@@ -1,4 +1,4 @@
-# Courseation - an interactive online course website
+# ExamElevate - an interactive online course website
 Our web app is live at https://courseation.vercel.app/
 
 
@@ -6,7 +6,7 @@ Our web app is live at https://courseation.vercel.app/
 
 <img alt="courseation-logo" src="client/public/images/logo-without-bg.png">
 
-•<strong>Courseation</strong> - an interactive online course website that allows remote access to educational content and coursework.\
+•<strong>ExamElevate</strong> - an interactive online course website that allows remote access to educational content and coursework.\
 • The website's frontend will be developed using `React.js` and `Bootstrap`, while the backend will be developed using `Node.js`, and `MySQL` will be chosen as the database management system.\
 • The application will follow the T3 architecture.\
 • The website offers a range of educational resources, including videos, readings, quizzes, and assignments that are well-organized. Learners have the flexibility to progress through the course at their own pace, making it an ideal choice for those who take longer to learn. They can also communicate with instructors and other learners via live chats and dedicated doubt sessions.\
