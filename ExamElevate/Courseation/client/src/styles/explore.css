@@ -1,0 +1,11 @@
+.explore-background {
+    background-image: url('../../public/images/goal-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.goals {
+    width: 18rem;
+    border: 0px;
+    box-shadow: 0px 16px 32px 0px rgba(233, 238, 242, 0.4);
+}
